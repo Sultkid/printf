@@ -9,8 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list(args);
-	int i = 0, num;
-	int sn = 0, retNumber = 0;
+	int i = 0, retNumber = 0;
 	int (*pntFunc)(va_list);
 
 	va_start(args, format);
