@@ -17,5 +17,11 @@ int main(void)
 	printf("%d\n", n);
 	n = printf("%%\n");
 	printf("%d\n", n);
+	printf("%d\n", 500000);
+	_printf("%d\n", 500000);
+	n = printf("%d\n", 2500000);
+	printf("%d\n", n);
+	n = _printf("%d\n", 2500000);
+	_printf("%d\n", n);
 	return (0);
 }
