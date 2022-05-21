@@ -1,43 +1,26 @@
 #include "main.h"
 /**
  * print_num - print numbers
- * @args: arg to be passed
+ * @n: arg to be passed
  * Return: nn
  */
-int print_num(va_list args)
+int print_num(int n)
 {
-	int n = va_arg(args, int), nn = 0;
-	char lastDigit;
-	int reversed;
+	int nn = 0;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		lastDigit = (char)('0' - (n % 10));
-		n /= -10;
-		nn++;
+		n = -n;
+		++nn;
 	}
-	else
-	{
-		lastDigit = (char)((n % 10) + '0');
-		n /= 10;
-		nn++;
-	}
-	reversed = 0;
-	while (n > 0)
-	{
-		reversed = reversed * 10 + (n % 10);
-		n /= 10;
-		nn++;
-	}
-	while (reversed > 0)
-	{
-		char c = (char)((reversed % 10) + '0');
 
-		_putchar(c);
-		reversed /= 10;
-		nn++;
+	if (n / 10)
+	{
+		print_num(n / 10);
+	
 	}
-	_putchar(lastDigit);
+	++nn;
+	_putchar((n % 10) + '0');
 	return (nn);
 }

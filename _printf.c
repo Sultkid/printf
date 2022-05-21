@@ -26,6 +26,11 @@ int _printf(const char *format, ...)
 			i++;
 			retNumber++;
 		}
+		else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+		{
+			i++;
+			retNumber += print_num(va_arg(args, int));
+		}
 		else
 		{
 			pntFunc = select_func(format[i + 1]);
